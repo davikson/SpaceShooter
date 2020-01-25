@@ -14,12 +14,17 @@ public class LevelUI : MonoBehaviour
     public Text levelCompletedScore;
     int score;
     Player player;
+    bool gameOver = false;
 
     void Awake()
     {
         StartCoroutine(StartFade());
         Enemy.OnDying += UpdateScore;
         Spawner.levelCompleted += LevelCompleted;
+    }
+    void OnDestroy()
+    {
+        Spawner.levelCompleted -= LevelCompleted;
     }
     void LateUpdate()
     {
@@ -39,13 +44,16 @@ public class LevelUI : MonoBehaviour
     {
         StartCoroutine(GameOverIE());
         gameOverScore.text = "Score: " + score.ToString("D4");
+        gameOver = true;
     }
     void LevelCompleted()
     {
-        if (Spawner.currentLevel == LevelSelectionUI.maxLevel - 1)
+        if (gameOver) return;
+        if (Spawner.currentLevel >= LevelSelectionUI.maxLevel - 1)
             LevelSelectionUI.maxLevel++;
         levelCompletedScore.text = "Score: " + score.ToString("D4");
         StartCoroutine(LevelCompletedIE());
+        LevelSelectionUI.SaveMaxLevel();
     }
     public void RestartMission()
     {

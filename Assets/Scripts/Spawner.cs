@@ -17,8 +17,8 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         LoadLevelStats();
-        //currentLevel = Mathf.Clamp(-1, levels.Count - 1, currentLevel);
-        if (currentLevel > levels.Count - 1) currentLevel = levels.Count - 1;
+        if (currentLevel > levels.Count - 1)
+            currentLevel = levels.Count - 1;
         enemiesToSpawn = levels[currentLevel].enemiesCount;
         SpawnPlayer();
         SaveLevelsStats();
@@ -30,8 +30,7 @@ public class Spawner : MonoBehaviour
             SpawnEnemy();
         else if(enemiesToSpawn <= 0 && FindObjectOfType<Enemy>() == null)
         {
-            if (levelCompleted != null)
-                levelCompleted();
+            levelCompleted?.Invoke();
             levelCompleted = null;
             Enemy.resetOnDying();
         }
@@ -57,9 +56,7 @@ public class Spawner : MonoBehaviour
     void SaveLevelsStats()
     {
         XmlSerializer xmls = new XmlSerializer(typeof(List<LevelParameters>));
-        //BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.dataPath + "/level",FileMode.OpenOrCreate);
-        //bf.Serialize(file, levels);
+        FileStream file = File.Open(Application.dataPath + "/level", FileMode.OpenOrCreate);
         xmls.Serialize(file, levels);
         file.Close();
     }
@@ -67,12 +64,19 @@ public class Spawner : MonoBehaviour
     {
         if (File.Exists(Application.dataPath + "/level"))
         {
-            //BinaryFormatter bf = new BinaryFormatter();
             XmlSerializer xmls = new XmlSerializer(typeof(List<LevelParameters>));
             FileStream file = File.Open(Application.dataPath + "/level", FileMode.OpenOrCreate);
-            //levels = (List<LevelParameters>)bf.Deserialize(file);
             levels = (List<LevelParameters>)xmls.Deserialize(file);
             file.Close();
+        }
+        else
+        {
+            levels.Clear();
+            for(int i = 0; i < 15; i++)
+            {
+                levels.Add(new LevelParameters());
+            }
+            SaveLevelsStats();
         }
     }
 }
@@ -80,17 +84,17 @@ public class Spawner : MonoBehaviour
 public class LevelParameters
 {
     [Header("Level parameters")]
-    public int enemiesCount = 10;
+    public int enemiesCount = 3;
     public float minSpwanDelay = 5;
     public float maxSpwanDelay = 5;
     [Header("Enemies statistics")]
-    public float eFireRate = 2;
+    public float eFireRate = .5f;
     public float eStartHealth = 1;
     public float eHorizontalAcceleration = 4;
     public float eVerticalAcceleration = 3;
     [Header("Player statistics")]
     public float pFireRate = 2;
     public float pStartHealth = 5;
-    public float pHorizontalAcceleration = 4;
-    public float pVerticalAcceleration = 3;
+    public float pHorizontalAcceleration = 8;
+    public float pVerticalAcceleration = 6;
 }

@@ -7,7 +7,6 @@ public class LivingEntity : MonoBehaviour, IDamagable
 {
     public event System.Action OnHit;
     public event System.Action OnDie;
-    protected Rigidbody rigidbody;
     public ParticleSystem explosion;
     public Transform muzzle;
     public Projectile projectile;
@@ -23,26 +22,13 @@ public class LivingEntity : MonoBehaviour, IDamagable
     bool shooting;
     protected virtual void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
         health = startHealth;
         shooting = false;
     }
     protected virtual void FixedUpdate()
     {
 
-    }/*
-    protected void MovementPh(float forward, float up)
-    {
-        targetVelocity = new Vector3(0, up, forward);
-        targetVelocity = transform.TransformDirection(targetVelocity);
-        targetVelocity *= deltaSpeed;
-
-        actualAcceleration = targetVelocity - rigidbody.velocity;
-        actualAcceleration.x = Mathf.Clamp(actualAcceleration.x, -horizontalAcceleration, horizontalAcceleration);
-        actualAcceleration.y = Mathf.Clamp(actualAcceleration.y, -verticalAcceleration, verticalAcceleration);
-
-        rigidbody.AddForce(actualAcceleration, ForceMode.Acceleration);
-    }*/
+    }
     protected void Movement(float forward, float up)
     {
         targetVelocity = new Vector3(forward, up, 0);
@@ -53,11 +39,7 @@ public class LivingEntity : MonoBehaviour, IDamagable
         transform.Translate(targetVelocity*Time.fixedDeltaTime);
     }
     protected void KeepBorders(float xMin, float xMax, float yMin, float yMax)
-    {/*
-        if (transform.position.x > xMax || transform.position.x < xMin)
-            rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
-        if (transform.position.y > yMax || transform.position.y < yMin)
-            rigidbody.velocity = Vector3.right * rigidbody.velocity.x;*/
+    {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax));
     }
     public void TakeDamage(float damage)
