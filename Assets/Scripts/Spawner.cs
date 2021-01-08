@@ -7,6 +7,7 @@ using System.IO;
 
 public class Spawner : MonoBehaviour
 {
+    public const string levelsDataPatch = "/level.xml";
     public List<LevelParameters> levels;
     public static int currentLevel;
     int enemiesToSpawn;
@@ -55,22 +56,23 @@ public class Spawner : MonoBehaviour
     void SaveLevelsStats()
     {
         XmlSerializer xmls = new XmlSerializer(typeof(List<LevelParameters>));
-        FileStream file = File.Open(Application.dataPath + "/level", FileMode.OpenOrCreate);
+        FileStream file = File.Open(Application.dataPath + levelsDataPatch, FileMode.OpenOrCreate);
         xmls.Serialize(file, levels);
         file.Close();
     }
     void LoadLevelStats()
     {
-        if (File.Exists(Application.dataPath + "/level"))
+        if (File.Exists(Application.dataPath + levelsDataPatch))
         {
             XmlSerializer xmls = new XmlSerializer(typeof(List<LevelParameters>));
-            FileStream file = File.Open(Application.dataPath + "/level", FileMode.OpenOrCreate);
+            FileStream file = File.Open(Application.dataPath + levelsDataPatch, FileMode.OpenOrCreate);
             levels = (List<LevelParameters>)xmls.Deserialize(file);
             file.Close();
         }
         else
         {
             levels.Clear();
+            LevelParameters.id_ = 0;
             for(int i = 0; i < 15; i++)
             {
                 levels.Add(new LevelParameters());
@@ -82,6 +84,8 @@ public class Spawner : MonoBehaviour
 [System.Serializable]
 public class LevelParameters
 {
+    public static int id_;
+    public int id = id_++;
     [Header("Level parameters")]
     public int enemiesCount = 3;
     public float minSpwanDelay = 5;

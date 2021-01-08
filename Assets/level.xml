@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfLevelParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <LevelParameters>
+    <id>0</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -14,6 +15,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>1</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -27,6 +29,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>2</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -40,6 +43,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>3</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -53,6 +57,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>4</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -66,6 +71,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>5</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -79,6 +85,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>6</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -92,6 +99,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>7</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -105,6 +113,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>8</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -118,6 +127,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>9</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -131,6 +141,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>10</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -144,6 +155,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>11</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -157,6 +169,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>12</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -170,6 +183,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>13</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
@@ -183,6 +197,7 @@
     <pVerticalAcceleration>6</pVerticalAcceleration>
   </LevelParameters>
   <LevelParameters>
+    <id>14</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
