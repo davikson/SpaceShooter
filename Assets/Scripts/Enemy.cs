@@ -118,7 +118,7 @@ public class Enemy : LivingEntity
         {
             yMovement = Mathf.Clamp(transform.position.y - obstackle.transform.position.y, -1, 1);
             yMovement = Mathf.Sign(yMovement) * (1 - Mathf.Abs(yMovement));
-            Movement(.5f, yMovement);
+            Movement(.5f, yMovement * .5f);
         }
     }
     public static void resetOnDying()

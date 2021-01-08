@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class MenuUI : MonoBehaviour
 {
     public GameObject mainMenuHolder;
@@ -12,35 +14,76 @@ public class MenuUI : MonoBehaviour
     public Image fadePlane;
     public Image fadePlane2;
 
+    public float maxVolumeLevel = 0f;
+    public float minVolumeLevel = -40f;
     public Slider masterVolumeSlider;
     public Slider sfxVolumeSlider;
     public Slider musicVolumeSlider;
     public Dropdown resolutionDropdown;
     public Toggle fulscreenToggle;
 
+    public AudioMixer audioMixer;
+
     void Start()
     {
+        mainMenuHolder.SetActive(true);
+        optionsMenuHolder.SetActive(false);
         StartCoroutine(StartIE());
-        fulscreenToggle.isOn = Screen.fullScreen;
+        InitializeResolution();
+        InitializeAudio();
+    }
+    void InitializeResolution()
+    {
+        int currentWidth = PlayerPrefs.GetInt("ResolutionWidth", Screen.currentResolution.width);
+        int currentheight = PlayerPrefs.GetInt("ResolutionHeight", Screen.currentResolution.height);
+        int currentRefreshRate = PlayerPrefs.GetInt("ResolutionRefreshRate", Screen.currentResolution.refreshRate);
+        bool currentFullScreen = PlayerPrefs.GetInt("FullScreen", Screen.fullScreen ? 1 : 0) == 1;
+        Resolution currentResolution = new Resolution()
+            { 
+                width = currentWidth, 
+                height = currentheight, 
+                refreshRate = currentRefreshRate
+            };
+
         int currentResolutionIndex = 0;
         List<string> resolutionsToAdd = new List<string>();
         foreach (Resolution resolution in Screen.resolutions)
         {
-            resolutionsToAdd.Add(resolution.width + "x" + resolution.height);
-            if (resolution.height == Screen.height)
+            resolutionsToAdd.Add(resolution.ToString());
+            if (resolution.Equals(currentResolution))
             {
                 currentResolutionIndex = System.Array.IndexOf(Screen.resolutions, resolution);
             }
         }
+
         resolutionDropdown.AddOptions(resolutionsToAdd);
         resolutionDropdown.value = currentResolutionIndex;
+        fulscreenToggle.isOn = currentFullScreen;
+        SetFullScreen(currentFullScreen);
+        SetScreenResolution(currentResolutionIndex);
+    }
+    void InitializeAudio()
+    {
+        AudioSource interactionAudioSource = GetComponent<AudioSource>();
+        foreach (Button button in GetComponentsInChildren<Button>(includeInactive:true))
+        {
+            button.onClick.AddListener(delegate () { interactionAudioSource.Play(); });
+        }
 
-        masterVolumeSlider.value = PlayerPrefs.GetFloat("master vol", .5f);
-        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfx vol", .5f);
-        musicVolumeSlider.value = PlayerPrefs.GetFloat("music vol", .5f);
-        PlayerPrefs.SetFloat("master vol", masterVolumeSlider.value);
-        PlayerPrefs.SetFloat("sfx vol", sfxVolumeSlider.value);
-        PlayerPrefs.SetFloat("music vol", musicVolumeSlider.value);
+        masterVolumeSlider.maxValue = maxVolumeLevel;
+        masterVolumeSlider.minValue = minVolumeLevel;
+        sfxVolumeSlider.maxValue = maxVolumeLevel;
+        sfxVolumeSlider.minValue = minVolumeLevel;
+        musicVolumeSlider.maxValue = maxVolumeLevel;
+        musicVolumeSlider.minValue = minVolumeLevel;
+
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", maxVolumeLevel);
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SfxVolume", maxVolumeLevel);
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", maxVolumeLevel);
+
+        SetMasterVolume();
+        SetSFXVolume();
+        SetMusicVolume();
     }
     public void Play()
     {
@@ -68,23 +111,35 @@ public class MenuUI : MonoBehaviour
     }
     public void SetScreenResolution(int i)
     {
-        Screen.SetResolution(Screen.resolutions[i].width, Screen.resolutions[i].height, Screen.fullScreen);
+        int width = Screen.resolutions[i].width;
+        int height = Screen.resolutions[i].height;
+        int refreshRate = Screen.resolutions[i].refreshRate;
+        Screen.SetResolution(width, height, Screen.fullScreen, refreshRate);
+        PlayerPrefs.SetInt("ResolutionWidth", width);
+        PlayerPrefs.SetInt("ResolutionHeight", height);
+        PlayerPrefs.SetInt("ResolutionRefreshRate", refreshRate);
     }
     public void SetFullScreen(bool isFullscren)
     {
         Screen.fullScreen = isFullscren;
+        PlayerPrefs.SetInt("FullScreen", isFullscren ? 1 : 0);
     }
-    public void SetMasterVolume(float value)
+    public void SetMasterVolume()
     {
-        //AudioMenager.instance.SetVolume(value, AudioMenager.AudioChannel.Master);
+        SetChannelVolume("MasterVolume", masterVolumeSlider.value);
     }
-    public void SetSFXVolume(float value)
+    public void SetSFXVolume()
     {
-        //AudioMenager.instance.SetVolume(value, AudioMenager.AudioChannel.SFX);
+        SetChannelVolume("SfxVolume", sfxVolumeSlider.value);
     }
-    public void SetMusicVolume(float value)
+    public void SetMusicVolume()
     {
-        //AudioMenager.instance.SetVolume(value, AudioMenager.AudioChannel.Music);
+        SetChannelVolume("MusicVolume", musicVolumeSlider.value);
+    }
+    void SetChannelVolume(string channelName, float value)
+    {
+        audioMixer.SetFloat(channelName, value);
+        PlayerPrefs.SetFloat(channelName, value);
     }
     IEnumerator StartIE()
     {

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class LevelUI : MonoBehaviour
 {
     public Text livesText;
@@ -16,6 +17,18 @@ public class LevelUI : MonoBehaviour
     Player player;
     bool gameOver = false;
 
+    public AudioSource ambiendSound;
+    public AudioSource looseSound;
+    public AudioSource winSound;
+
+    private void Start()
+    {
+        AudioSource interactionAudioSource = GetComponent<AudioSource>();
+        foreach (Button button in GetComponentsInChildren<Button>(includeInactive: true))
+        {
+            button.onClick.AddListener(delegate () { interactionAudioSource.Play(); });
+        }
+    }
     void Awake()
     {
         StartCoroutine(StartFade());
@@ -45,6 +58,8 @@ public class LevelUI : MonoBehaviour
         StartCoroutine(GameOverIE());
         gameOverScore.text = "Score: " + score.ToString("D4");
         gameOver = true;
+        ambiendSound.Stop();
+        looseSound.Play();
     }
     void LevelCompleted()
     {
@@ -54,6 +69,8 @@ public class LevelUI : MonoBehaviour
         levelCompletedScore.text = "Score: " + score.ToString("D4");
         StartCoroutine(LevelCompletedIE());
         LevelSelectionUI.SaveMaxLevel();
+        ambiendSound.Stop();
+        winSound.Play();
     }
     public void RestartMission()
     {

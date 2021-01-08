@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 using System.IO;
 
+[RequireComponent(typeof(AudioSource))]
 public class LevelSelectionUI : MonoBehaviour
 {
     public Image fade;
@@ -20,6 +21,12 @@ public class LevelSelectionUI : MonoBehaviour
             else
                 levelButtons[i].interactable = false;
         StartCoroutine(Fade(Color.black, Color.clear));
+
+        AudioSource interactionAudioSource = GetComponent<AudioSource>();
+        foreach (Button button in GetComponentsInChildren<Button>(includeInactive: true))
+        {
+            button.onClick.AddListener(delegate () { interactionAudioSource.Play(); });
+        }
     }
     public void BackToMenu()
     {
