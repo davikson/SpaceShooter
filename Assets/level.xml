@@ -16,7 +16,7 @@
   </LevelParameters>
   <LevelParameters>
     <id>1</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>5</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
     <eFireRate>0.5</eFireRate>
@@ -32,9 +32,9 @@
     <id>2</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
+    <maxSpwanDelay>7</maxSpwanDelay>
     <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
+    <eStartHealth>2</eStartHealth>
     <eHorizontalAcceleration>4</eHorizontalAcceleration>
     <eVerticalAcceleration>3</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
@@ -46,11 +46,11 @@
     <id>3</id>
     <enemiesCount>3</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
+    <maxSpwanDelay>7</maxSpwanDelay>
     <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -58,13 +58,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>4</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>4</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
+    <maxSpwanDelay>7</maxSpwanDelay>
     <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -72,13 +72,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>5</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>5</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <maxSpwanDelay>7</maxSpwanDelay>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -86,13 +86,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>6</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>6</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <maxSpwanDelay>7</maxSpwanDelay>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -100,13 +100,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>7</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>7</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -114,13 +114,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>8</id>
-    <enemiesCount>3</enemiesCount>
+    <enemiesCount>7</enemiesCount>
     <minSpwanDelay>5</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -128,13 +128,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>9</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
+    <enemiesCount>1</enemiesCount>
+    <minSpwanDelay>4</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>10</eStartHealth>
+    <eHorizontalAcceleration>2</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -142,13 +142,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>10</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
+    <enemiesCount>8</enemiesCount>
+    <minSpwanDelay>4</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -156,13 +156,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>11</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
+    <enemiesCount>8</enemiesCount>
+    <minSpwanDelay>4</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -170,13 +170,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>12</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
+    <enemiesCount>8</enemiesCount>
+    <minSpwanDelay>4</minSpwanDelay>
     <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <eFireRate>1</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>5</eHorizontalAcceleration>
+    <eVerticalAcceleration>4</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -184,13 +184,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>13</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <enemiesCount>6</enemiesCount>
+    <minSpwanDelay>8</minSpwanDelay>
+    <maxSpwanDelay>10</maxSpwanDelay>
+    <eFireRate>2</eFireRate>
+    <eStartHealth>2</eStartHealth>
+    <eHorizontalAcceleration>8</eHorizontalAcceleration>
+    <eVerticalAcceleration>6</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
@@ -198,13 +198,13 @@
   </LevelParameters>
   <LevelParameters>
     <id>14</id>
-    <enemiesCount>3</enemiesCount>
-    <minSpwanDelay>5</minSpwanDelay>
-    <maxSpwanDelay>5</maxSpwanDelay>
-    <eFireRate>0.5</eFireRate>
-    <eStartHealth>1</eStartHealth>
-    <eHorizontalAcceleration>4</eHorizontalAcceleration>
-    <eVerticalAcceleration>3</eVerticalAcceleration>
+    <enemiesCount>2</enemiesCount>
+    <minSpwanDelay>10</minSpwanDelay>
+    <maxSpwanDelay>15</maxSpwanDelay>
+    <eFireRate>3</eFireRate>
+    <eStartHealth>3</eStartHealth>
+    <eHorizontalAcceleration>10</eHorizontalAcceleration>
+    <eVerticalAcceleration>8</eVerticalAcceleration>
     <pFireRate>2</pFireRate>
     <pStartHealth>5</pStartHealth>
     <pHorizontalAcceleration>8</pHorizontalAcceleration>
