@@ -92,12 +92,12 @@ public class LevelParameters
     public float maxSpwanDelay = 5;
     [Header("Enemies statistics")]
     public float eFireRate = .5f;
-    public float eStartHealth = 1;
+    public int eStartHealth = 1;
     public float eHorizontalAcceleration = 4;
     public float eVerticalAcceleration = 3;
     [Header("Player statistics")]
     public float pFireRate = 2;
-    public float pStartHealth = 5;
+    public int pStartHealth = 5;
     public float pHorizontalAcceleration = 8;
     public float pVerticalAcceleration = 6;
 }

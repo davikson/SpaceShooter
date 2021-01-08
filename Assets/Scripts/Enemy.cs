@@ -103,9 +103,9 @@ public class Enemy : LivingEntity
         {
             yMovement = Mathf.Clamp(targetPlayer.transform.position.y - transform.position.y, -1, 1);
             if (Mathf.Sign(yMovement) * Mathf.Sign(GetComponent<Rigidbody>().velocity.y) == 1)
-                Movement(.5f, yMovement);
+                Movement(.3f, yMovement);
             else
-                Movement(.5f, Mathf.Sign(yMovement));
+                Movement(.3f, Mathf.Sign(yMovement));
             if (Mathf.Abs(yMovement) < .5f)
                 Shoot();
         }

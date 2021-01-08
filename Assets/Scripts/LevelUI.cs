@@ -11,6 +11,7 @@ public class LevelUI : MonoBehaviour
     public Image fadePlane;
     public GameObject gameOverHandler;
     public GameObject levelCompletedHandler;
+    public Text levelCompletedText;
     public Text gameOverScore;
     public Text levelCompletedScore;
     int score;
@@ -67,6 +68,7 @@ public class LevelUI : MonoBehaviour
         if (gameOver) return;
         if (Spawner.currentLevel >= LevelSelectionUI.maxLevel - 1)
             LevelSelectionUI.maxLevel++;
+        levelCompletedText.text = "Level " + (Spawner.currentLevel + 1) + " Completed";
         levelCompletedScore.text = "Score: " + score.ToString("D4");
         StartCoroutine(LevelCompletedIE());
         LevelSelectionUI.SaveMaxLevel();

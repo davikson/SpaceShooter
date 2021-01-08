@@ -37,6 +37,12 @@ public class LevelSelectionUI : MonoBehaviour
         Spawner.currentLevel = i;
         StartCoroutine(Level());
     }
+    public void RestartProgress()
+    {
+        maxLevel = 1;
+        SaveMaxLevel();
+        SceneManager.LoadScene(1);
+    }
     IEnumerator Fade(Color startColor, Color endColor)
     {
         fade.gameObject.SetActive(true);
@@ -81,7 +87,7 @@ public class LevelSelectionUI : MonoBehaviour
         xmls.Serialize(file, tmp);
         file.Close();
     }
-    public static void LoadMaxLevel()
+    static void LoadMaxLevel()
     {
         if (File.Exists(Application.dataPath + "/ml"))
         {

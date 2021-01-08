@@ -32,3 +32,6 @@ sysinfo.txt
 
 # Visual Studio cache directory
 .vs/
+
+Assets/ml
+Assets/ml.meta

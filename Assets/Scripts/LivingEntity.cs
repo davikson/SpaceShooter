@@ -11,7 +11,7 @@ public class LivingEntity : MonoBehaviour, IDamagable
     public Transform muzzle;
     public Projectile projectile;
     public float fireRate = 5;
-    public float startHealth = 5;
+    public int startHealth = 5;
     public float health { get; private set; }
     public float horizontalAcceleration = 4;
     public float verticalAcceleration = 3;

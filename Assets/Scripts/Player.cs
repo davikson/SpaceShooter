@@ -43,8 +43,9 @@ public class Player : LivingEntity
     {
         if(col.gameObject.tag == "Enemy")
         {
-            col.gameObject.GetComponent<LivingEntity>().TakeDamage(Mathf.Infinity);
-            TakeDamage(1);
+            LivingEntity enemy = col.gameObject.GetComponent<LivingEntity>();
+            enemy.TakeDamage(Mathf.Infinity);
+            TakeDamage(enemy.health);
         }
     }
 }
