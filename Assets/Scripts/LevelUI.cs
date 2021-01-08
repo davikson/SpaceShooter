@@ -32,6 +32,7 @@ public class LevelUI : MonoBehaviour
     void Awake()
     {
         StartCoroutine(StartFade());
+        Enemy.resetOnDying();
         Enemy.OnDying += UpdateScore;
         Spawner.levelCompleted += LevelCompleted;
     }

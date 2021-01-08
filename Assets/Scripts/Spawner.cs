@@ -32,7 +32,6 @@ public class Spawner : MonoBehaviour
         {
             levelCompleted?.Invoke();
             levelCompleted = null;
-            Enemy.resetOnDying();
         }
     }
     void SpawnEnemy()
